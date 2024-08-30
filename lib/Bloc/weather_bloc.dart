@@ -63,7 +63,8 @@ class WeatherBloc extends HydratedBloc<WeatherEvent, WeatherState> {
     emit(WeatherLoading());
     await determinePosition();
     try {
-      var response = await ApiProvider.fetchWeatherData(
+      var response = await ApiProvider()
+          .fetchWeatherData(
           appId: "37ea9939152496e5de6ca532f93817fd",
           lat: position?.latitude ?? 0,
           lon: position?.longitude ?? 0);

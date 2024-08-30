@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
           create: (context) => WeatherBloc(),
         )
       ],
+      // ignore: prefer_const_constructors
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',

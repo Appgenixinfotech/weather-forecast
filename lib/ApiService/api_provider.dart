@@ -1,9 +1,9 @@
-import 'dart:developer';
+
 import 'package:weatherdemo/App/Model/weather_model.dart';
 import 'package:weatherdemo/main.dart';
 
 class ApiProvider {
-  static Future<WeatherData?> fetchWeatherData(
+   Future<WeatherData?> fetchWeatherData(
       {required double lat, required double lon, required String appId,bool isStateOn=false}) async {
 
       try {
@@ -12,7 +12,7 @@ class ApiProvider {
         );
         if (response.statusCode == 200) {
           var data = serializers.deserializeWith(WeatherData.serializer, response.data);
-          log("---------)${response.data.toString()}");
+        print("---------)${response.data.toString()}");
 
           return data;
         } else {
